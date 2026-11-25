@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <queries>
+        <package android:name="com.google.android.apps.maps" />
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -13,21 +20,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyAplicacion">
-        <activity
 
-            android:name="MainActivity"
+        <!-- ACTIVIDAD PRINCIPAL / LOGIN (La que abre al tocar el icono) -->
+        <activity
+            android:name=".MainActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- ACTIVIDAD DEL MENÚ PRINCIPAL -->
         <activity
-            android:name="Menu"
+            android:name=".MenuPrincipalActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <!-- ACTIVIDAD DE LA LISTA DE TRAYECTOS -->
+        <activity
+            android:name=".ListaTrayectosActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ACTIVIDAD DE TRAYECTO EN TIEMPO REAL -->
+        <activity
+            android:name=".TrayectoActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".MapaTrayectoActvity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
     </application>
 
 </manifest>
